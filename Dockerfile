@@ -16,6 +16,8 @@ RUN chown 1000:1000 .
 USER 1000:1000
 
 RUN set -x \
+	&& mkdir -p /opt/syncthing/config \
+	&& mkdir -p /opt/syncthing/sync \
 	&& curl -fL https://github.com/syncthing/syncthing/releases/download/v${VERSION}/${DIST}-v${VERSION}.tar.gz | tar -xz \
 	&& mv ${DIST}-v${VERSION}/syncthing . \
 	&& rm -rf ${DIST}-v${VERSION}
