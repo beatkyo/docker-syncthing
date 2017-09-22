@@ -1,8 +1,9 @@
 #!/bin/bash
 set -e
 
-ARCH=$(uname -m)
-VERSION="0.14.38"
+source "version"
+
+ARCH=${1:-$(uname -m)}
 
 function build {
   echo
@@ -26,16 +27,6 @@ function build {
     .
 }
 
-function push {
-  echo
-  echo "+ push"
-  echo "+ image: dalexandre/syncthing-${ARCH:?}:${VERSION:?}"
-  echo
-
-  docker push "dalexandre/syncthing-$ARCH:$VERSION"
-  docker push "dalexandre/syncthing-$ARCH:latest"
-}
-
 function build-i386 {
   ARCH="i386"
   IMAGE="i386/alpine"
@@ -57,4 +48,3 @@ function build-x86_64 {
 }
 
 build-${ARCH:?}
-push
