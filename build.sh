@@ -35,6 +35,14 @@ function build-i386 {
   build
 }
 
+function build-amd64 {
+  ARCH="amd64"
+  IMAGE="amd64/alpine"
+  DIST="syncthing-linux-amd64"
+
+  build
+}
+
 function build-arm {
   ARCH="arm"
   IMAGE="arm32v6/alpine"
@@ -44,7 +52,7 @@ function build-arm {
 }
 
 function build-x86_64 { 
-  build-i386 
+  build-amd64 
 }
 
 build-${ARCH:?}
