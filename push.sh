@@ -21,8 +21,14 @@ function push-i386 {
 	push
 }
 
+function push-amd64 {
+	ARCH="amd64"
+
+	push
+}
+
 function push-x86_64 {
-	push-i386
+	push-amd64
 }
 
 push-$ARCH
