@@ -27,6 +27,12 @@ function push-amd64 {
 	push
 }
 
+function push-aarch64 {
+	ARCH="arm64v8"
+
+	push
+}
+
 function push-x86_64 {
 	push-amd64
 }

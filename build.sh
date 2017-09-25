@@ -43,10 +43,10 @@ function build-amd64 {
   build
 }
 
-function build-arm {
-  ARCH="arm"
-  IMAGE="arm32v6/alpine"
-  DIST="syncthing-linux-arm"
+function build-aarch64 {
+  ARCH="arm64v8"
+  IMAGE="arm64v8/alpine"
+  DIST="syncthing-linux-arm64"
 
   build
 }
